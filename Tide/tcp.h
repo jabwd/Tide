@@ -80,6 +80,7 @@ TIDE_EXPORT tcpsock tcpaccept(tcpsock s);
 TIDE_EXPORT tcpsock tcpconnect(ipaddr addr);
 TIDE_EXPORT size_t tcpsend(tcpsock s, const void *buf, size_t len);
 TIDE_EXPORT void tcpflush(tcpsock s);
+TIDE_EXPORT size_t available_bytes_for_reading(tcpsock s);
 TIDE_EXPORT size_t tcprecv(tcpsock s, void *buf, size_t len);
 TIDE_EXPORT size_t tcprecvuntil(tcpsock s, void *buf, size_t len, const char *delims, size_t delimcount);
 TIDE_EXPORT void tcpclose(tcpsock s);

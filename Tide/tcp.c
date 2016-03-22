@@ -249,6 +249,12 @@ void tcpflush(tcpsock s) {
     errno = 0;
 }
 
+size_t available_bytes_for_reading(tcpsock s)
+{
+	struct tide_tcpconn *conn = (struct tide_tcpconn*)s;
+	return conn->ilen;
+}
+
 size_t tcprecv(tcpsock s, void *buf, size_t len) {
     if(s->type != tide_TCPCONN)
         tide_panic("trying to receive from an unconnected socket");
